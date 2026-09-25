@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface: #131313;
+  --color-background: #131313;
+  --color-primary: #ffffff;
+  --color-on-primary: #2f3131;
+  --color-primary-container: #e2e2e2;
+  --color-on-primary-container: #636565;
+  --color-secondary: #d2bbff;
+  --color-on-secondary: #3f008e;
+  --color-secondary-container: #6001d1;
+  --color-on-secondary-container: #c9aeff;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c7c8;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  --color-emerald-accent: #10b981;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 3rem;
+  --spacing-space-2xl: 5rem;
+  --spacing-margin: 2.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 0.75rem;
+
+  --font-display-xl: 'Space Grotesk', sans-serif;
+  --font-headline-lg: 'Space Grotesk', sans-serif;
+  --font-headline-md: 'Space Grotesk', sans-serif;
+  --font-headline-sm: 'Space Grotesk', sans-serif;
+  --font-body-lg: 'Geist', sans-serif;
+  --font-body-md: 'Geist', sans-serif;
+  --font-body-sm: 'Geist', sans-serif;
+  --font-mono-code: 'JetBrains Mono', monospace;
+  --font-label-md: 'JetBrains Mono', monospace;
+  --font-label-sm: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #e5e2e1;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Typography Utilities */
+.text-display-xl {
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.text-headline-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.text-headline-md {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-sm {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-body-md {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+
+.text-body-sm {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+.text-label-md {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.06em;
+}
+
+.text-label-sm {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  letter-spacing: 0.08em;
+}
+
+@keyframes ambientGlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
+
+.animate-scanline {
+  animation: scanline 4s linear infinite;
+}
+
+
